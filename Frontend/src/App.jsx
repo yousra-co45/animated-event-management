@@ -36,7 +36,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/events" element={<Events />} />
-            <Route path="/event-details" element={<EventDetail />} />
+            
+            {/* 🎯 FIX: Path ko static se dynamic ID system (/event/:id) par badal diya hai */}
+            <Route path="/event/:id" element={<EventDetail />} />
+            
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/contact" element={<Contact />} />
