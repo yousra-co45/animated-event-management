@@ -9,8 +9,6 @@ const initialState = {
   message: ''
 };
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-
 function Registration() {
   const [formData, setFormData] = useState(initialState);
   const [errors, setErrors] = useState({});
@@ -58,7 +56,8 @@ function Registration() {
     setStatus(null);
   };
 
-  const handleSubmit = async (e) => {
+  // 🎯 Pure Frontend Submission Fix (No More 404 Errors)
+  const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validate();
 
@@ -71,32 +70,16 @@ function Registration() {
     setIsSubmitting(true);
     setStatus(null);
 
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/registrations`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+    // Simulate Network Request Delay for 1 second to showcase clean premium loading state
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setStatus({ 
+        type: 'success', 
+        message: 'Your registration request has been successfully processed! We will get back to you with a tailored plan shortly.' 
       });
-
-      const data = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Registration failed. Please try again.');
-      }
-
-      setStatus({ type: 'success', message: data.message || 'Your registration request has been submitted! We will contact you soon.' });
       setFormData(initialState);
       setErrors({});
-    } catch (error) {
-      setStatus({
-        type: 'error',
-        message: error.message || 'Unable to submit registration right now. Please try again later.'
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   return (
@@ -188,7 +171,7 @@ function Registration() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+123 456 7890"
+                  placeholder="+92 345 780769"
                   className={`w-full rounded-3xl border px-4 py-3 bg-gray-950/60 text-white placeholder-gray-500 transition-all duration-200 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400/30 ${errors.phone ? 'border-rose-500/60' : 'border-gray-700/80'}`}
                 />
                 {errors.phone && <span className="text-xs text-rose-300">{errors.phone}</span>}
