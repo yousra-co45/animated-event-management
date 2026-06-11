@@ -150,7 +150,7 @@ const Contact = () => {
                 className="block py-3.5 px-2 w-full text-sm text-white bg-transparent border-0 border-b-2 border-amber-500/30 appearance-none focus:outline-none focus:ring-0 focus:border-amber-500 transition-all duration-300 peer"
               />
               {/* FIXED: Default text color changed to subtle gold text-amber-500/60 */}
-              <label className="peer-focus:font-medium absolute text-sm text-amber-500/60 duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-amber-400 uppercase tracking-wider font-semibold text-xs">
+              <label className="peer-focus:font-medium absolute text-amber-500/60 duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-amber-400 uppercase tracking-wider font-semibold text-xs">
                 Full Name
               </label>
             </div>
@@ -165,7 +165,7 @@ const Contact = () => {
                 className="block py-3.5 px-2 w-full text-sm text-white bg-transparent border-0 border-b-2 border-amber-500/30 appearance-none focus:outline-none focus:ring-0 focus:border-amber-500 transition-all duration-300 peer"
               />
               {/* FIXED: Default label text changed to gold */}
-              <label className="peer-focus:font-medium absolute text-sm text-amber-500/60 duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-amber-400 uppercase tracking-wider font-semibold text-xs">
+              <label className="peer-focus:font-medium absolute text-amber-500/60 duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-amber-400 uppercase tracking-wider font-semibold text-xs">
                 Email Address
               </label>
             </div>
